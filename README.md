@@ -135,3 +135,10 @@ sudo firewall-cmd --permanent --add-port=18381-18383/tcp
 ```bash
 sudo firewall-cmd --reload
 ```
+
+### 参考资料
+* [CentOS 7 安装使用Shadowsocks客户端](https://www.jianshu.com/p/824912d9afda)
+* [Centos7 切换阿里云yum源 安装shadowsocks](https://www.jianshu.com/p/5ea81488a9ca)
+* [Ubuntu 16.04下Shadowsocks服务器端安装及优化](https://www.polarxiong.com/archives/Ubuntu-16-04%E4%B8%8BShadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BC%98%E5%8C%96.html)
+* [使用 privoxy 转发 socks 到 http](http://einverne.github.io/post/2018/03/privoxy-forward-socks-to-http.html)
+* [SSH(Putty)远程连接VPS服务器](https://www.jianshu.com/p/132f09cb4577)
