@@ -7,6 +7,8 @@
 * [非官方网站](http://banwagong.cn)
 
 ## CentOS7
+
+### 创建SOCKS代理
 1. 安装最新版Shadowsocks
 ```bash
 sudo pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip
@@ -69,4 +71,67 @@ curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
 {
   "origin": "xxx.xxx.xxx.xxx"
 }
+```
+
+7. 设置shadowsocks服务开机自启动
+```bash
+sudo systemctl enable shadowsocks
+```
+
+### 创建HTTP代理
+1. 安装Privoxy
+```bash
+sudo yum install privoxy -y
+```
+
+2. 编写Privoxy的配置文件
+```bash
+sudo nano /etc/privoxy/config
+```
+> 需要在配置中查找、修改和增加
+```txt
+listen-address 127.0.0.1:8118 # 8118 是默认端口，不用改
+forward-socks5t / 127.0.0.1:1080 . #转发到本地端口，注意最后有个点
+```
+
+3. 设置系统环境变量
+```bash
+sudo nano /etc/profile
+```
+```txt
+PROXY_HOST=127.0.0.1
+export all_proxy=http://$PROXY_HOST:8118
+export ftp_proxy=http://$PROXY_HOST:8118
+export http_proxy=http://$PROXY_HOST:8118
+export https_proxy=http://$PROXY_HOST:8118
+export no_proxy=localhost,172.16.0.0/16,192.168.0.0/16.,127.0.0.1,10.10.0.0/16
+```
+```bash
+source /etc/profile
+```
+
+4. 测试http代理
+```bash
+curl -I www.google.com
+```
+
+5. 设置privoxy服务开机自启动
+```bash
+sudo systemctl enable privoxy
+```
+
+### 防火墙开放端口设置（这个忘记了是不是必须配置的）
+1. 开启防火墙服务
+```bash
+sudo systemctl start firewalld
+```
+
+2. 开放端口
+```bash
+sudo firewall-cmd --permanent --add-port=18381-18383/tcp
+```
+
+3. 重新加载防火墙规则
+```bash
+sudo firewall-cmd --reload
 ```
