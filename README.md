@@ -36,4 +36,6 @@ sudo nano /etc/shadowsocks/shadowsocks.json
 }
 ```
 > 通过访问[KiwiVM控制面板-Shadowsocks Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks)，把255.255.255.255换成Server IP的内容；把8888换成Server Port的内容；把12345678换成Password的内容。
-    > ![](https://kiwivm.64clouds.com/img/shadowsocks_settings.png)
+
+![](https://kiwivm.64clouds.com/img/shadowsocks_settings.png)
+
