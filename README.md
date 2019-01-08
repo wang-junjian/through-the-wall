@@ -7,18 +7,18 @@
 * [非官方网站](http://banwagong.cn)
 
 ## CentOS7
-* 安装最新版Shadowsocks
+1. 安装最新版Shadowsocks
 ```bash
 sudo pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip
 ```
 
-* 查看Shadowsocks版本
+2. 查看Shadowsocks版本
 ```bash
 ssserver --version
 Shadowsocks 3.0.0
 ```
 
-* 编写Shadowsocks的配置文件
+3. 编写Shadowsocks的配置文件
 ```bash
 sudo nano /etc/shadowsocks/shadowsocks.json
 ```
@@ -37,5 +37,36 @@ sudo nano /etc/shadowsocks/shadowsocks.json
 ```
 > 通过访问[KiwiVM控制面板-Shadowsocks Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks)，把255.255.255.255换成Server IP的内容；把8888换成Server Port的内容；把12345678换成Password的内容。
 
-    > ![](https://kiwivm.64clouds.com/img/shadowsocks_settings.png)
+> ![](https://kiwivm.64clouds.com/img/shadowsocks_settings.png)
 
+4. 创建shadowsocks服务
+```bash
+sudo nano /etc/systemd/system/shadowsocks.service
+```
+```txt
+[Unit]
+Description=Shadowsocks
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+
+[Install]
+WantedBy=multi-user.target
+```
+
+5. 启动shadowsocks服务
+```bash
+sudo systemctl start shadowsocks
+```
+
+6. 测试socks5代理
+```bash
+curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
+```
+对应地应该显示你的Server IP
+```json
+{
+  "origin": "xxx.xxx.xxx.xxx"
+}
+```
