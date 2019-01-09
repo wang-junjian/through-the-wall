@@ -79,7 +79,7 @@ sudo systemctl enable shadowsocks
 ```
 
 ### 创建HTTP代理
-1. 安装Privoxy
+1. 安装[Privoxy](http://www.privoxy.org/)
 ```bash
 sudo yum install privoxy -y
 ```
@@ -135,6 +135,13 @@ sudo firewall-cmd --permanent --add-port=18381-18383/tcp
 ```bash
 sudo firewall-cmd --reload
 ```
+
+### 浏览器Chrome代理[SwitchyOmega](https://www.switchyomega.com/)
+1. 下载[SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases)
+
+2. 安装SwitchyOmega。打开浏览器的扩展程序，拖拽SwitchyOmega_Chromium.crx到扩展程序页面。
+
+3. 配置代理。设置代理协议：SOCKS5，代理服务器：127.0.0.1，代理端口：1080。
 
 ### 参考资料
 * [CentOS 7 安装使用Shadowsocks客户端](https://www.jianshu.com/p/824912d9afda)
