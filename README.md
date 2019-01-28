@@ -9,7 +9,7 @@
 * [Block List Check](https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck)
 * [非官方网站](http://banwagong.cn)
 
-## CentOS7
+## Linux
 
 ### 创建SOCKS代理
 1. 安装最新版Shadowsocks
@@ -45,20 +45,35 @@ sudo nano /etc/shadowsocks/shadowsocks.json
 > ![](https://kiwivm.64clouds.com/img/shadowsocks_settings.png)
 
 4. 创建shadowsocks服务
-```bash
-sudo nano /etc/systemd/system/shadowsocks.service
-```
-```txt
-[Unit]
-Description=Shadowsocks
+    ```bash
+    sudo nano /etc/systemd/system/shadowsocks.service
+    ```
 
-[Service]
-TimeoutStartSec=0
-ExecStart=/usr/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+    * CentOS7
+    ```txt
+    [Unit]
+    Description=Shadowsocks
 
-[Install]
-WantedBy=multi-user.target
-```
+    [Service]
+    TimeoutStartSec=0
+    ExecStart=/usr/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+    
+    * Ubuntu18
+    ```txt
+    [Unit]
+    Description=Shadowsocks
+
+    [Service]
+    TimeoutStartSec=0
+    ExecStart=/usr/local/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
 5. 启动shadowsocks服务
 ```bash
@@ -83,9 +98,16 @@ sudo systemctl enable shadowsocks
 
 ### 创建HTTP代理
 1. 安装[Privoxy](http://www.privoxy.org/)
-```bash
-sudo yum install privoxy -y
-```
+
+    * CentOS7
+    ```bash
+    sudo yum install privoxy -y
+    ```
+
+    * Ubuntu18
+    ```bash
+    sudo apt-get install privoxy -y
+    ```
 
 2. 编写Privoxy的配置文件
 ```bash
