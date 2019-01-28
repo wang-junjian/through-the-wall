@@ -4,6 +4,9 @@
 * [BandwagonHost](https://bwh8.net/clientarea.php?action=products)
 * [KiwiVM控制面板](https://kiwivm.64clouds.com/main.php)
 * [KiwiVM控制面板-Shadowsocks Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks)
+* [KiwiVM控制面板-ShadowsocksR Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocksr)
+* [Just My Socks](https://justmysocks.net/members/)
+* [Block List Check](https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck)
 * [非官方网站](http://banwagong.cn)
 
 ## CentOS7
