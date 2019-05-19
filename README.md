@@ -171,6 +171,7 @@ sudo firewall-cmd --reload
 1. 下载[SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases)
 
 2. 安装SwitchyOmega。打开浏览器的扩展程序，拖拽SwitchyOmega_Chromium.crx到扩展程序页面。
+> 当出现错误：CRX_HEADER_INVALID时，把SwitchyOmega_Chromium.crx改名为SwitchyOmega_Chromium.zip，解压后，打开浏览器的扩展程序，选择加载已解压的扩展程序，选择刚才解压后的目录。
 
 3. 配置代理。设置代理协议：SOCKS5，代理服务器：127.0.0.1，代理端口：1080。
 
@@ -181,3 +182,5 @@ sudo firewall-cmd --reload
 * [使用 privoxy 转发 socks 到 http](http://einverne.github.io/post/2018/03/privoxy-forward-socks-to-http.html)
 * [SSH(Putty)远程连接VPS服务器](https://www.jianshu.com/p/132f09cb4577)
 * [linux systemctl 命令](https://www.cnblogs.com/sparkdev/p/8472711.html)
+* [Proxy SwitchyOmega](https://proxy-switchyomega.com)
+* [【CRX_HEADER_INVALID 】Unable to install from the crx file](https://github.com/FelisCatus/SwitchyOmega/issues/1766)
