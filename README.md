@@ -1,7 +1,7 @@
 # Through the wall 穿墙而过
 
 ## 搬瓦工VPS
-* [BandwagonHost](https://bwh8.net/clientarea.php?action=products)
+* [BandwagonHost](https://bwh88.net/clientarea.php?action=products)
 * [KiwiVM控制面板](https://kiwivm.64clouds.com/main.php)
 * [KiwiVM控制面板-Shadowsocks Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks)
 * [KiwiVM控制面板-ShadowsocksR Server](https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocksr)
